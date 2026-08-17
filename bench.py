@@ -93,7 +93,6 @@ def run_probe(prompt, max_tokens=MAX_TOKENS):
         "stream": True,
         "chat_template_kwargs": {"enable_thinking": False},
         "timings_per_token": True,
-        "cache_prompt": False,
     }
     req = urllib.request.Request(URL, json.dumps(body).encode(), {"Content-Type": "application/json"})
     t0 = time.time()
