@@ -1,0 +1,19 @@
+scenario: n3
+extra args: ['--spec-type', 'draft-mtp', '--spec-draft-n-max', '3']
+
+--- write a python function that merges two sorted lists into one sorted l
+  run 1:  180.8 tok/s | srv  180.4 | acc 0.8981 (291/324)
+  run 2:  181.2 tok/s | srv  180.8 | acc 0.8981 (291/324)
+  run 3:  173.4 tok/s | srv  173.4 | acc 0.8639 (254/294)
+ 180.8 tok/s median | runs: [180.8, 181.2, 173.4] | write a python function that merges two sorted lis
+--- explain the difference between mmap and read for loading large files, 
+  run 1:  126.5 tok/s | srv  126.5 | acc 0.5260 (101/192)
+  run 2:  122.9 tok/s | srv  122.9 | acc 0.5141 (91/177)
+  run 3:  108.8 tok/s | srv  107.6 | acc 0.4094 (113/276)
+ 122.9 tok/s median | runs: [126.5, 122.9, 108.8] | explain the difference between mmap and read for l
+--- write a bash script that watches a directory and prints new files as t
+  run 1:  152.8 tok/s | srv  152.5 | acc 0.7057 (271/384)
+  run 2:  168.7 tok/s | srv  166.1 | acc 0.8081 (160/198)
+  run 3:  160.4 tok/s | srv  160.0 | acc 0.7631 (277/363)
+ 160.4 tok/s median | runs: [152.8, 168.7, 160.4] | write a bash script that watches a directory and p
+OVERALL: mean 152.8 median 160.4

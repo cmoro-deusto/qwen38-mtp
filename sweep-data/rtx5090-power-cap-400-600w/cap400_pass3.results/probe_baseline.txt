@@ -1,0 +1,19 @@
+scenario: baseline
+extra args: (none)
+
+--- write a python function that merges two sorted lists into one sorted l
+  run 1:   71.3 tok/s | srv   71.1 | acc n/a
+  run 2:   71.2 tok/s | srv   71.0 | acc n/a
+  run 3:   71.2 tok/s | srv   71.0 | acc n/a
+  71.2 tok/s median | runs: [71.3, 71.2, 71.2] | write a python function that merges two sorted lis
+--- explain the difference between mmap and read for loading large files, 
+  run 1:   71.6 tok/s | srv   71.1 | acc n/a
+  run 2:   71.4 tok/s | srv   71.0 | acc n/a
+  run 3:   71.3 tok/s | srv   70.9 | acc n/a
+  71.4 tok/s median | runs: [71.6, 71.4, 71.3] | explain the difference between mmap and read for l
+--- write a bash script that watches a directory and prints new files as t
+  run 1:   71.1 tok/s | srv   70.7 | acc n/a
+  run 2:   71.0 tok/s | srv   70.8 | acc n/a
+  run 3:   70.6 tok/s | srv   70.4 | acc n/a
+  71.0 tok/s median | runs: [71.1, 71.0, 70.6] | write a bash script that watches a directory and p
+OVERALL: mean 71.2 median 71.2

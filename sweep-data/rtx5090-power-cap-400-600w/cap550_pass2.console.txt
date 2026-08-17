@@ -1,0 +1,70 @@
+model: /home/cmoro-deusto/Code/ai/hf/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/f1bfb127c64f7072bdd2cad55f258b9c8b2910fe/Qwen3.8-27B-UD-Q4_K_XL.gguf
+results dir: /home/cmoro-deusto/Code/ai/projects/cmoro-deusto/qwen38-mtp/bench_results_20260817_234751
+
+=== scenario baseline  ================================================
+  74.9 tok/s median | runs: [75.1, 74.9, 74.4] | write a python function that merges two sorted lis
+  74.8 tok/s median | runs: [74.7, 75.0, 74.8] | explain the difference between mmap and read for l
+  74.5 tok/s median | runs: [74.9, 74.5, 74.5] | write a bash script that watches a directory and p
+OVERALL: mean 74.8 median 74.8
+
+=== scenario n1  ================================================
+ 120.8 tok/s median | runs: [120.9, 120.7, 120.8] | write a python function that merges two sorted lis
+ 107.7 tok/s median | runs: [108.2, 106.3, 107.7] | explain the difference between mmap and read for l
+ 116.1 tok/s median | runs: [116.1, 117.2, 115.6] | write a bash script that watches a directory and p
+OVERALL: mean 114.8 median 116.1
+
+=== scenario n2  ================================================
+ 160.4 tok/s median | runs: [162.5, 159.9, 160.4] | write a python function that merges two sorted lis
+ 118.3 tok/s median | runs: [118.3, 118.2, 126.1] | explain the difference between mmap and read for l
+ 150.4 tok/s median | runs: [152.9, 148.8, 150.4] | write a bash script that watches a directory and p
+OVERALL: mean 144.2 median 150.4
+
+=== scenario n3  ================================================
+ 186.0 tok/s median | runs: [181.2, 189.6, 186.0] | write a python function that merges two sorted lis
+ 123.4 tok/s median | runs: [128.4, 123.4, 122.6] | explain the difference between mmap and read for l
+ 166.7 tok/s median | runs: [168.3, 166.7, 166.4] | write a bash script that watches a directory and p
+OVERALL: mean 159.2 median 166.7
+
+=== scenario n4  ================================================
+ 198.8 tok/s median | runs: [196.9, 198.8, 207.7] | write a python function that merges two sorted lis
+ 114.3 tok/s median | runs: [114.3, 107.3, 116.7] | explain the difference between mmap and read for l
+ 171.1 tok/s median | runs: [174.6, 127.2, 171.1] | write a bash script that watches a directory and p
+OVERALL: mean 157.2 median 171.1
+
+=== scenario n5  ================================================
+ 202.9 tok/s median | runs: [202.9, 213.1, 194.6] | write a python function that merges two sorted lis
+  99.8 tok/s median | runs: [99.8, 91.3, 103.1] | explain the difference between mmap and read for l
+ 165.5 tok/s median | runs: [157.8, 178.6, 165.5] | write a bash script that watches a directory and p
+OVERALL: mean 156.3 median 165.5
+
+=== scenario n6  ================================================
+ 207.1 tok/s median | runs: [193.8, 207.1, 208.0] | write a python function that merges two sorted lis
+  91.9 tok/s median | runs: [91.9, 103.5, 83.9] | explain the difference between mmap and read for l
+ 160.5 tok/s median | runs: [166.6, 160.5, 157.6] | write a bash script that watches a directory and p
+OVERALL: mean 152.5 median 160.5
+
+## all scenarios (all runs pooled)
+
+| Scenario | mean | median | acc (min-max) |
+|---|---|---|---|
+| baseline | 74.8 | 74.8 | n/a-n/a |
+| n1 | 114.8 | 116.1 | 0.7158-0.9598 |
+| n2 | 144.2 | 150.4 | 0.5357-0.9491 |
+| n3 | 159.2 | 166.7 | 0.4810-0.9524 |
+| n4 | 157.2 | 171.1 | 0.3446-0.9234 |
+| n5 | 156.3 | 165.5 | 0.2623-0.8750 |
+| n6 | 152.5 | 160.5 | 0.2247-0.8075 |
+
+Prompts:
+- P1: write a python function that merges two sorted lists into one sorted list, with docstring.
+- P2: explain the difference between mmap and read for loading large files, one paragraph.
+- P3: write a bash script that watches a directory and prints new files as they appear.
+
+#### Values for sudoingX/qwen38-mtp community table (baseline vs n2) ####
+
+| Scenario | mean | median | acc (min-max) |
+|---|---|---|---|
+| baseline | 74.8 | 74.8 | n/a-n/a |
+| n2 | 144.2 | 150.4 | 0.5357-0.9491 |
+
+all output saved in /home/cmoro-deusto/Code/ai/projects/cmoro-deusto/qwen38-mtp/bench_results_20260817_234751
