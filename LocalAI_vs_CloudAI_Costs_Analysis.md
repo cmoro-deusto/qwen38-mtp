@@ -319,22 +319,30 @@ row.
 
 ### 5.3 What this actually means
 
-**Against frontier models, the card still pays for itself quickly.** 126M
-generated tokens against Claude Fable 5 is a few months of steady use even at a
-modest duty cycle. The doubling in hardware price moved that from "weeks" to
-"months," not from "yes" to "no."
+The decision splits cleanly in two, and the dividing line is not price — it is
+where the alternative sits on the capability index (section 6).
 
-**Against the cheap end, owning has stopped making sense.** Once hardware is
-amortized, local costs about **€0.50 per million tokens** — and DeepSeek V4-Flash
-off-peak costs €0.61. That is not a meaningful gap. At the current card price you
-would need to generate **11.7 billion tokens** — over nine years at a realistic
-25% duty cycle — before the purchase pays for itself against that provider. The
-card will be obsolete long before then.
+**If you would otherwise use a frontier model, buying pays off fast.** Claude
+Opus 5, GPT-5.6 Sol, Claude Fable 5 and Kimi K3 score 54–59 against the local
+model's 51. They are genuinely better, and the card does not close that gap. But
+it pays for itself after 126M–421M generated tokens — a few months of steady use
+even at a modest duty cycle. What you are buying is a real capability step down
+in exchange for a 112×–374× cut in running cost. Whether that trade is worth it
+depends entirely on the work.
 
-So, for a prospective buyer: **at €5,800, buying a GPU to save money only works
-if the alternative is an expensive model.** If the workload would otherwise run
-on DeepSeek or GLM, renting wins on pure cost, and the reasons to self-host are
-the non-financial ones in section 6.
+**If you would otherwise use a cheap model, there is no cost case — and no
+capability case against.** gpt-5.6-terra (50), DeepSeek V4-Pro (50), V4-Flash
+(48) and GLM-5.2 (46) all score at or below the local model, so owning is not a
+downgrade. But once the €5,800 is amortized, local costs about **€0.50 per
+million tokens** and V4-Flash off-peak costs €0.61 — a difference too small to
+justify a purchase. You would need **11.7 billion tokens**, over nine years at a
+25% duty cycle, before the card wins. It will be obsolete first.
+
+So the sharp version is: **a GPU bought at today's prices is a way to escape
+frontier pricing, not a way to beat cheap providers.** Against the cheap tier the
+two options are near-identical on both capability and cost, and the decision
+falls entirely to the non-financial factors in section 6 — privacy, rate limits,
+offline capability, and control over what happens to your data.
 
 The 25% column is the one to read. The "100%" months assume the card decodes
 every second of every day, which nothing real does.
