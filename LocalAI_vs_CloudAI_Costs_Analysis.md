@@ -14,9 +14,6 @@ tokens. Buying those same tokens from a frontier API would cost somewhere betwee
 €4,700 and €19,700 a month. The cheapest cloud option on the list still costs
 about ten times your power bill.
 
-That is not the whole story — a 27B model at 4-bit quantization is not the same
-product as a frontier model — but the cost side is not close.
-
 **Scope:** sections 1–4 and 6–7 assume you already own the hardware, and count
 running costs only. Section 5 is separate: it is for deciding whether to *buy* a
 card, and is the only place the purchase price appears.
@@ -353,14 +350,53 @@ section 4 — where local wins by between 10× and 374×.
 The arithmetic above is real, but it compares cost only. Four things it leaves
 out:
 
-**1. The models are not equivalent.** Qwen3.8-27B at 4-bit quantization is a
-capable local model; it is not Claude Fable 5 or GPT-5.6. Comparing their
-per-token cost is like comparing the fuel cost of a van and a motorcycle — true,
-and not the whole decision. The honest reading is not "self-hosting saves
-€118,000" but rather: *for work this model handles well, the marginal cost per
-token is close to zero.* That changes what you are willing to try. Reprocessing a
-whole corpus, running a linter over every file, generating ten variations instead
-of one — all become free experiments locally and line items in the cloud.
+**1. The models are not interchangeable — but the gap is smaller than people
+assume.** On the Artificial Analysis Agentic Index, a weighted average of agentic
+benchmarks (GDPval-AA v2, τ³-Banking), Qwen3.8-27B scores **51**, placing it 7th
+of 29 measured models:
+
+![Artificial Analysis Agentic Index — Qwen3.8 27B scores 51, ranking 7th of 29 models](assets/artificial-analysis-agentic-index.png)
+
+| Model | Agentic Index |
+|---|---|
+| Claude Opus 5 (max) | 59 |
+| Grok 4.6 (high) | 59 |
+| Qwen3.8-Max | 58 |
+| GPT-5.6 Sol (max) | 58 |
+| Claude Fable 5 (with fallback) | 57 |
+| Kimi K3 (max) | 54 |
+| **Qwen3.8 27B — the local model** | **51** |
+| GPT-5.6 Terra (max) | 50 |
+| DeepSeek V4-Pro 0813 (max) | 50 |
+| Claude Opus 4.8 (max) | 49 |
+| DeepSeek V4-Flash 0731 (max) | 48 |
+| GPT-5.6 Luna (max) | 47 |
+| GLM-5.2 (max) | 46 |
+| Claude Opus 4.7 (max) | 46 |
+| Gemini 3.7 Flash (high) | 45 |
+
+Read that against section 4 and the comparison sharpens. Every model in the cost
+tables that scores *below* the local one still costs between 10× and 33× the
+electricity to run. Against that group you are not trading capability for cost —
+you are ahead on the index and cheaper by an order of magnitude. The real trade
+only begins at the top: Claude Opus 5, GPT-5.6 Sol, Claude Fable 5 and Kimi K3
+buy 3 to 8 index points for 112× to 374× the running cost.
+
+Two honest qualifications. The index measures *agentic* capability specifically,
+so it does not settle every task — long-context reasoning, writing quality, and
+non-English performance are not what it weights. And the benchmarked model is
+unquantized; the UD-Q4_K_XL build here gives up some accuracy for the VRAM
+saving, though 4-bit quantization at this size typically costs low single-digit
+percentages rather than whole tiers.
+
+The practical conclusion is not "self-hosting saves €118,000." It is that **for a
+large class of agentic work the local model is competitive with paid options that
+cost 10–30× more to run** — and where it genuinely falls short, the comparison is
+against four specific frontier models, not against the API market as a whole.
+There is a second effect worth naming: near-zero marginal cost changes what you
+are willing to attempt. Reprocessing a whole corpus, running a model over every
+file in a repository, generating ten variations instead of one — all are free
+experiments locally and line items in the cloud.
 
 **2. Input tokens are not counted.** Every API figure here is output-only. Real
 workloads also pay for input, which on agentic or long-context work often exceeds
